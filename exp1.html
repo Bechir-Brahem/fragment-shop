@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    .element {
+        width: 100%;
+        border: black 1px solid;
+        height: calc(100vh - 100px);
+
+    }
+
+    .img1 {
+        background: lightyellow url("images/vanilla.jpg") center no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .img2 {
+        background: lightyellow url("images/honey.jpg") center no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .img3 {
+        background: lightyellow url("images/cannelle.webp") center no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .overlay {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        height: 100%;
+        width: 100%;
+            font-family: 'Bebas Neue', cursive;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: lightyellow;
+        font-size: 8vw;
+    }
+
+    .overlay:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+    }
+
+    .choice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        text-align: center;
+        font-size: 45px;
+        font-family: 'Bebas Neue', cursive;
+        background-color: black;
+        color: lightyellow;
+    }
+</style>
+<body>
+<div class="choice">
+    choose your flavor:
+</div>
+<div style="display: flex;">
+    <div class="element img1">
+        <div class="overlay">
+            Vanilla
+
+        </div>
+
+    </div>
+    <div class="element img2">
+        <div class="overlay">
+            Honey
+        </div>
+
+    </div>
+    <div class="element img3">
+        <div class="overlay">
+            Cannelle
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
