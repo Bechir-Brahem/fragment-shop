@@ -74,49 +74,79 @@
 </style>
 <body>
 <div class="choice">
-    <img src="images/step1.png" alt="" style="height: 15vh">
+    <img src="images/step3.png" alt="" style="height: 15vh">
     <div>
-        choose your flavor:
+        choose your size:
     </div>
 </div>
 <div style="display: flex;">
-    <a href="#" class="element" onclick="done('vanilla')">
+    <a href="#" class="element" onclick="done('30')">
         <div class="img1">
             <div class="overlay">
-                Vanilla
+                30mL
             </div>
 
         </div>
     </a>
-    <a href="#" class="element" onclick="done('honey')">
+    <a href="#" class="element" onclick="done('50')">
         <div class="img2">
             <div class="overlay">
-                Honey
+                50mL
             </div>
 
         </div>
     </a>
-    <a href="#" class="element" onclick="done('cannelle')">
+    <a href="#" class="element" onclick="done('100')">
         <div class="img3">
             <div class="overlay">
-                Cannelle
+                100mL
             </div>
 
         </div>
     </a>
 
 </div>
+
 <script>
 
     flavors_link='exp1.html'
     terma_link='exp2.html'
     quantity_link='exp3.html'
     result_link='res.html'
-    function done(choice){
-        window.location.replace(terma_link+'?flavor='+choice);
+    var url =new URL(location.href)
+    a = url.search
+    var params = new URLSearchParams(a);
+    flavor = params.get('flavor')
+    flavors = ['honey', 'vanilla', 'cannelle'];
+    let found_flavor = false
+    flavors.forEach((val) => {
+        if (flavor === val) {
+            found_flavor = true;
+        }
+    })
+    console.log(flavor)
+    if (!found_flavor){
+        window.location.replace(flavors_link)
+    }
 
+
+
+    terma = params.get('terma')
+    termas = ['berda', 'skhouna', 'kbira'];
+    let found_terma = false
+    termas.forEach((val) => {
+        if (terma === val) {
+            found_terma= true;
+        }
+    })
+    console.log(terma)
+    if (!found_terma){
+        window.location.replace(flavors_link)
+    }
+
+    function done(choice){
+        window.location.replace(result_link+'?flavor='+flavor+'&terma='+terma+'&quantity='+choice);
     }
 </script>
-
 </body>
 </html>
